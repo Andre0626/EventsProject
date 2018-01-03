@@ -1,0 +1,30 @@
+
+<div>
+    <h1>Events</h1>
+    <hr/>
+    <hr/>
+
+    <ul  class="thumbnails" >
+        <li ng-repeat="variabila in events  | orderBy:'-date' " class="span5" > <a  ng-click="goToPage(variabila)">
+            <div class="well hoverwell">
+                <div class="row">
+                    <h2 class="span6">{{variabila.name}}</h2>
+                </div>
+                <div class="row"><span class="span1">Date:</span>
+                    <span>{{variabila.date}}</span>
+                </div>
+                <div class="row">
+                    <span class="span1">Time:</span>
+                    <span>{{variabila.time}}</span>
+                </div>
+                <div class="row">
+                    <span class="span1">Location:</span>
+                    <span>{{variabila.address}}</span>
+                </div>
+                <div class="row">
+                    <span class="span1">City:</span>
+                    <span>{{variabila.city}}</span>
+                </div>
+            </div></a>
+    </ul>
+</div>

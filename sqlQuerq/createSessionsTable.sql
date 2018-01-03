@@ -1,0 +1,2 @@
+﻿CREATE TABLE sessions (id int,name varchar(225),creatorName varchar(50),duration int,level varchar(50),abstract varchar(225),upVoteCount int,eventId int,
+PRIMARY KEY (id), FOREIGN KEY (eventId) REFERENCES events(id));

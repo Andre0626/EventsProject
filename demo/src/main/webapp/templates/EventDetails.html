@@ -1,0 +1,102 @@
+<div id="content">
+<img ng-src="{{event.imgUrl}}" alt="{{event.name}}"/>
+    <div calss="row">
+        <div class="span11">
+            <h2>{{event.name | uppercase}}</h2>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="span3">
+            <div><strong>Date : </strong>{{event.date}}</div>
+            <div><strong>Time : </strong>{{event.time}}</div>
+            <div><strong>Price : </strong>{{34 | currency}}</div>
+            <div>Test TimeOut <h3>{{countdown}}</h3>   <strong>{{name}}</strong></div>
+        </div>
+        <div class="span4">
+            <address>
+                <strong>Location adress:</strong><br>
+                {{event.address}}<br>
+                {{event.city}} ,
+                {{event.province}}<br>
+                {{myDate | date:myFormat}}
+            </address>
+        </div>
+        <div class="span4">
+            {{data.duration1}}<br>
+            {{data.duration2}}<br>
+            {{data.duration3}}<br>
+        </div>
+    </div>
+
+    <hr/>
+    <h3 ng-style="myStyle">Sessions</h3>
+ <div class="row" style="margin-left:0;">
+     <div style="font-size: medium; color: whitesmoke;float: left">Voting:</div>
+
+     <div class="span0 well votingWidget">
+         <div class="votingButton" ng-click="VoteSession(event.vote,event.id,true)">
+             <i class="icon-chevron-up icon-white"></i>
+         </div>
+         <div class="badge badge-inverse">
+             <div>{{event.vote}}</div>
+         </div>
+         <div class="votingButton" ng-click="VoteSession(event.vote,event.id)">
+             <i class="icon-chevron-down icon"></i>
+         </div>
+     </div>
+
+    <div class="infoPers">
+        <div class="infoPersRow">Min persons: 20</div>
+        <div class="infoPersRow">Mix persons: 35</div>
+        <div class="infoPersRow">Actual: {{event.vote}}</div>
+    </div>
+ </div>
+    <hr/>
+
+    OrdeBy:
+    <select ng-model="session" class="input-small">
+        <option selected value="name">Name</option>
+        <option selected value="-upVoteCount">votes</option>
+
+    </select>
+
+    Show :
+    <select ng-model="querty" class="input-medium">
+        <option selected value="">All</option>
+        <option selected value="Introductory">Introductory</option>
+        <option selected value="Intermediate">Intermediate</option>
+        <option selected value="Advanced">Advanced</option>
+
+    </select>
+
+    <button class="btn" ng-click="buttonDisabled()">Disable</button>
+
+    <ul class="thumbnails">
+        <li ng-repeat="session in event.sessions | orderBy:session |filter:querty" class="span11">
+
+            <div class="row session">
+                <div class="span0 well votingWidget">
+                    <div class="votingButton" ng-click="upVoteSession(session)">
+                        <i class="icon-chevron-up icon-white"></i>
+                    </div>
+
+                    <div class="badge badge-inverse">
+                        <div>{{session.vote}}</div>
+                    </div>
+
+                    <div class="votingButton" ng-click="downVoteSession(session)">
+                        <i class="icon-chevron-down icon"></i>
+                    </div>
+                </div>
+                <div class="well span9">
+                    <h4 class="well-title">{{session.name}}</h4>
+                    <h6 style="margin-top:-10px">{{session.creatorName}}</h6>
+                    <span>Duration : {{session.duration | durations}}</span><br/>
+                    <spna>Level : {{session.level}}</spna>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

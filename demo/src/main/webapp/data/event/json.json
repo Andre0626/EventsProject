@@ -1,0 +1,39 @@
+{
+  "goals":[
+    {
+      "id":1,
+      "goal_name" : "SOLD OUT EFF",
+      "goal_value" : 90
+    },
+    {
+      "id":2,
+      "goal_name" : "TRANSIENT EFF",
+      "goal_value" : 80
+    },
+    {
+      "id":3,
+      "goal_name" : "CHANNEL YIELD",
+      "goal_value" : 82
+    },
+    {
+      "id":4,
+      "goal_name" : "NET REVPAR",
+      "goal_value" : 170
+    },
+    {
+      "id":5,
+      "goal_name" : "REVIEWS INDEX",
+      "goal_value" : 4.1
+    },
+    {
+      "id":6,
+      "goal_name" : "TRIP ADVISOR",
+      "goal_value" : 15
+    },
+    {
+      "id":7,
+      "goal_name" : "EMPLOYEE(coming soon",
+      "goal_value" : 82
+    }
+  ]
+}
